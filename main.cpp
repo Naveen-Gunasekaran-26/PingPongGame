@@ -10,12 +10,12 @@
 #define WINDOW_WIDTH	800
 #define WINDOW_HEIGHT	600
 
+#define PADDLE_MAX_VELOCITY 1000
+#define BALL_MAX_X_VELOCITY 500
+#define BALL_MAX_Y_VELOCITY 250
+
 #define FPS 150
 #define FRAME_TARGET_TIME (1000/FPS)
-int lastFrameTime = 0;
-float timeToWait = 0;
-float deltaTime = 0;
-
 
 enum class GameScreen {
 	GAME_START_SCREEN,
@@ -23,6 +23,10 @@ enum class GameScreen {
 	GAME_OVER_SCREEN
 };
 
+
+int lastFrameTime = 0;
+float timeToWait = 0;
+float deltaTime = 0;
 
 SDL_Window* window;
 SDL_Renderer* renderer;
@@ -37,11 +41,6 @@ Uint32 scoreCount = 0;
 
 CustomRectangle paddle, ball;
 SDL_Rect paddleRect, ballRect;
-
-#define PADDLE_MAX_VELOCITY 1000
-#define BALL_MAX_X_VELOCITY 500
-#define BALL_MAX_Y_VELOCITY 250
-
 CustomText customScoreText, pressAnyKeyText, gameOverText, pressRText;
 SDL_Rect customScoreTextRect, pressAnyKeyTextRect, gameOverTextRect, pressRTextRect;
 
